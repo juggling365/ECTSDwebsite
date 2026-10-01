@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Curriculum | Electric City Tang Soo Do</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Electric City Tang Soo Do</h1>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="classes.html">Classes</a>
+        <a href="payments.html">Payments</a>
+        <a href="shop.html">Shop</a>
+        <a href="curriculum.html" aria-current="page">Student Portal</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro curriculum-intro">
+      <p class="eyebrow">Student resource library</p>
+      <h2>Keep training between classes.</h2>
+      <p>Review your curriculum videos, practice at your own pace, and come ready for your next lesson.</p>
+    </section>
+
+    <section id="access-gate" class="access-gate" aria-labelledby="access-heading">
+      <p class="eyebrow">Students only</p>
+      <h2 id="access-heading">Enter your access password.</h2>
+      <form id="password-form">
+        <label for="curriculum-password">Password</label>
+        <input id="curriculum-password" name="password" type="password" autocomplete="current-password" required>
+        <button type="submit">View Curriculum</button>
+        <p id="password-message" class="form-message" role="alert" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="curriculum-content" class="curriculum-content" hidden aria-labelledby="curriculum-heading">
+      <div class="curriculum-heading-row">
+        <div>
+          <p class="eyebrow">Private student library</p>
+          <h2 id="curriculum-heading">Your training videos</h2>
+        </div>
+        <button id="lock-curriculum" class="secondary-button" type="button">Lock page</button>
+      </div>
+      <div class="level-list">
+        <a class="level-card" href="white.html"><span>01</span><strong>White Belt</strong><small>Beginner foundations</small></a>
+        <a class="level-card" href="orange.html"><span>02</span><strong>Orange Belt</strong><small>Building the basics</small></a>
+        <a class="level-card" href="green.html"><span>03</span><strong>Green Belt</strong><small>Developing technique</small></a>
+        <a class="level-card" href="green-one-stripe.html"><span>04</span><strong>Green Belt, 1 Stripe</strong><small>Refining technique</small></a>
+        <a class="level-card" href="green-two-stripes.html"><span>05</span><strong>Green Belt, 2 Stripes</strong><small>Preparing for progress</small></a>
+        <a class="level-card" href="red.html"><span>06</span><strong>Red Belt</strong><small>Growing control</small></a>
+        <a class="level-card" href="red-one-stripe.html"><span>07</span><strong>Red Belt, 1 Stripe</strong><small>Sharpening focus</small></a>
+        <a class="level-card" href="red-two-stripes.html"><span>08</span><strong>Red Belt, 2 Stripes</strong><small>Deepening skill</small></a>
+        <a class="level-card" href="cho-dan-bo.html"><span>09</span><strong>Cho Dan Bo</strong><small>Black belt candidate</small></a>
+        <a class="level-card" href="cho-dan.html"><span>10</span><strong>Cho Dan</strong><small>First-degree black belt</small></a>
+        <a class="level-card" href="ee-dan.html"><span>11</span><strong>Ee Dan</strong><small>Second-degree black belt</small></a>
+        <a class="level-card" href="sam-dan.html"><span>12</span><strong>Sam Dan</strong><small>Third-degree black belt</small></a>
+        <a class="level-card" href="sa-dan.html"><span>13</span><strong>Sa Dan</strong><small>Fourth-degree black belt</small></a>
+        <a class="level-card" href="oh-dan.html"><span>14</span><strong>Oh Dan</strong><small>Fifth-degree black belt</small></a>
+        <a class="level-card" href="instructors.html"><span>15</span><strong>Instructors</strong><small>Teaching resources</small></a>
+      </div>
+      <a class="student-community-link" href="https://www.facebook.com/share/g/19ye5muy2w/?mibextid=wwxlfr" target="_blank" rel="noopener noreferrer">Visit the private student Facebook group</a>
+      <a class="student-community-link" href="student-manual.pdf" target="_blank" rel="noopener noreferrer">Open the student manual (PDF)</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contact">
+      <a href="mailto:Electriccitytangsoodo@gmail.com">Electriccitytangsoodo@gmail.com</a>
+      <span><a href="tel:+15705911568">Call (570) 591-1568</a> <a href="sms:+15705911568">Text</a></span>
+      <address>504 Scranton Carbondale Hwy<br>Mayfield, PA 18433</address>
+    </div>
+    <p>&copy; Electric City Tang Soo Do</p>
+  </footer>
+
+  <script src="js/curriculum.js" defer></script>
+</body>
+</html>
