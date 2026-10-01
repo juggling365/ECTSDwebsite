@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/32883489/README.md)
 # Electric City Tang Soo Do Website
 
 Static website for Electric City Tang Soo Do, including public information pages, free-week signup, payment links, and a protected student curriculum area.
