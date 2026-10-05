@@ -1,7 +1,7 @@
 const signupForm = document.querySelector('#free-week-form');
 const formMessage = document.querySelector('#form-message');
 
-signupForm?.addEventListener('submit', (event) => {
+signupForm?.addEventListener('submit', async (event) => {
 	event.preventDefault();
 
 	if (!signupForm.checkValidity()) {
