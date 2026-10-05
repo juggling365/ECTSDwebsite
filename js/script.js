@@ -14,17 +14,42 @@ signupForm?.addEventListener('submit', (event) => {
 	const email = formData.get('email');
 	const phone = formData.get('phone') || 'Not provided';
 	const classInterest = formData.get('class-interest');
-	const subject = `Free Week Request from ${name}`;
-	const body = [
-		'New free week request',
-		'',
-		`Name: ${name}`,
-		`Email: ${email}`,
-		`Phone: ${phone}`,
-		`Class interest: ${classInterest}`
-	].join('\n');
+	const data = {
+  name,
+  email,
+  phone,
+  classInterest
+};
 
-	window.location.href = `mailto:electriccitytangsoodo@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-	formMessage.textContent = `Thanks, ${name}. We will be in touch to schedule your free week.`;
-	signupForm.reset();
+try {
+  const response = await fetch(
+    'https://freeweekbackend.electriccitytangsoodo.workers.dev',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }
+  );
+
+  const result = await response.json();
+
+  if (result.success) {
+    formMessage.textContent =
+      `Thanks, ${name}! We will be in touch to schedule your free week. Check your email for confirmation.`;
+
+    signupForm.reset();
+  } else {
+    formMessage.textContent =
+      'There was a problem sending your request. Please try again.';
+  }
+
+} catch (error) {
+  console.error(error);
+
+  formMessage.textContent =
+    'Unable to submit the form right now. Please try again later.';
+}
+
 });
