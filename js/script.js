@@ -19,8 +19,8 @@ signupForm?.addEventListener('submit', async (event) => {
   name,
   email,
   phone,
-  classInterest
-  childAge
+  classInterest,
+  childAge,
 };
 
 try {
