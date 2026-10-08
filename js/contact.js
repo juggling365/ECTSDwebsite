@@ -1,29 +1,51 @@
 const contactForm = document.querySelector('#contact-form');
 const contactFormMessage = document.querySelector('#contact-form-message');
 
-contactForm?.addEventListener('submit', (event) => {
+contactForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   if (!contactForm.checkValidity()) {
-    contactFormMessage.textContent = 'Please complete each field before sending your message.';
+    contactFormMessage.textContent =
+      'Please complete each field before sending your message.';
     return;
   }
 
   const formData = new FormData(contactForm);
-  const name = formData.get('name');
-  const email = formData.get('email');
-  const message = formData.get('message');
-  const subject = `Website message from ${name}`;
-  const body = [
-    'New message from the website',
-    '',
-    `Name: ${name}`,
-    `Email: ${email}`,
-    '',
-    message
-  ].join('\n');
 
-  window.location.href = `mailto:electriccitytangsoodo@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  contactFormMessage.textContent = 'Thanks for reaching out. We will be in touch soon.';
-  contactForm.reset();
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    message: formData.get('message')
+  };
+
+  contactFormMessage.textContent = 'Sending...';
+
+  try {
+
+    const response = await fetch(
+      'https://freeweekbackend.electriccitytangsoodo.workers.dev/contact',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }
+    );
+
+    const result = await response.json();
+
+    if (result.success) {
+      contactFormMessage.textContent =
+        'Thank you! Your message has been sent.';
+      contactForm.reset();
+    } else {
+      contactFormMessage.textContent =
+        'There was an error sending your message.';
+    }
+
+  } catch (error) {
+    contactFormMessage.textContent =
+      'There was an error sending your message.';
+  }
 });
