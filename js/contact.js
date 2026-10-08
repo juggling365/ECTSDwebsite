@@ -12,11 +12,14 @@ contactForm?.addEventListener('submit', async (event) => {
 
   const formData = new FormData(contactForm);
 
-  const data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    message: formData.get('message')
-  };
+const data = {
+  name: formData.get('name'),
+  email: formData.get('email'),
+  message: formData.get('message'),
+  turnstileToken:
+    formData.get('cf-turnstile-response')
+};
+
 
   contactFormMessage.textContent = 'Sending...';
 
