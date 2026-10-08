@@ -14,7 +14,7 @@ signupForm?.addEventListener('submit', async (event) => {
 	const email = formData.get('email');
 	const phone = formData.get('phone') || 'Not provided';
 	const classInterest = formData.get('class-interest');
-	const childAge = formData.get('chil-age')|| 'Not provided';
+	const childAge = formData.get('child-age')|| 'Not provided';
 	const data = {
   name,
   email,
