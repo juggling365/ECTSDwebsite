@@ -1,6 +1,3 @@
-console.log('CONTACT JS LOADED');
-console.log('FORM SUBMITTED');
-
 const contactForm = document.querySelector('#contact-form');
 const contactFormMessage = document.querySelector('#contact-form-message');
 
