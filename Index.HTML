@@ -67,13 +67,24 @@
 					<label for="phone">Phone number (optional)</label>
 					<input id="phone" name="phone" type="tel" autocomplete="tel">
 
-					<label for="class-interest">I am interested in</label>
-					<select id="class-interest" name="class-interest" required>
-						<option value="">Choose a class</option>
-						<option value="kids">Kids classes</option>
-						<option value="adults">Adult classes</option>
-						<option value="both">Kids and adult classes</option>
-					</select>
+			<label for="class-interest">I am interested in</label>
+<select id="class-interest" name="class-interest" required>
+    <option value="">Choose a class</option>
+    <option value="kids">Kids classes</option>
+    <option value="adults">Adult classes</option>
+    <option value="both">Kids and adult classes</option>
+</select>
+
+<label for="child-age">Child age(s) (optional)</label>
+<input
+    id="child-age"
+    name="child-age"
+    type="number"
+    min="5"
+    max="17"
+    placeholder="e.g. 8">
+
+<button type="submit">Claim My Free Week</button>
 
 					<button type="submit">Claim My Free Week</button>
 					<p id="form-message" class="form-message" role="status" aria-live="polite"></p>
