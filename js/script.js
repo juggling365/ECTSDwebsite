@@ -21,6 +21,8 @@ signupForm?.addEventListener('submit', async (event) => {
   phone,
   classInterest,
   childAge,
+turnstileToken:
+    formData.get('cf-turnstile-response')
 };
 
 try {
