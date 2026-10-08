@@ -48,7 +48,9 @@ const data = {
     }
 
   } catch (error) {
-    contactFormMessage.textContent =
-      'There was an error sending your message.';
+contactFormMessage.textContent =
+  JSON.stringify(result);
+
+console.log(result);
   }
 });
