@@ -810,6 +810,11 @@ nav a[aria-current="page"] {
   text-align: center;
 }
 
+.cta h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 .signup-form {
   display: grid;
   gap: 0.65rem;
