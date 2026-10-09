@@ -58,7 +58,7 @@
 			<form id="free-week-form" class="signup-form">
 			<h2>Start Your Martial Arts Journey Today</h2>
 			<p>Contact us now to schedule a complimentary introductory class.</p>
-				<form id="free-week-form" class="signup-form">
+				
 					<label for="name">Your name</label>
 					<input id="name" name="name" type="text" autocomplete="name" required>
 
@@ -104,5 +104,56 @@
 	</footer>
 	<script src="js/script.js" defer></script>
 	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+	<script src="js/script.js" defer></script>
+https://challenges.cloudflare.com/turnstile/v0/api.jsscript>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const form = document.getElementById('free-week-form');
+
+    form.addEventListener('submit', async (e) => {
+
+        e.preventDefault();
+
+        const data = {
+            formType: 'Free Week CTA',
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            classInterest: document.getElementById('class-interest').value,
+            studentAges: document.getElementById('child-age').value,
+            message: ''
+        };
+
+        try {
+
+            await fetch(
+                'https://script.google.com/macros/s/AKfycbz4ULETzJY2KC0LPZ0aqn3JwlEZIkI0osimRctS-QR4u6EaAlBiOuNVTTObEWOuCZrwug/exec,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                }
+            );
+
+            document.getElementById('form-message').textContent =
+                'Thank you! We will contact you shortly.';
+
+            form.reset();
+
+        } catch (error) {
+
+            document.getElementById('form-message').textContent =
+                'Submission failed. Please try again.';
+        }
+    });
+
+});
+</script>
+
 </body>
+</html></body>
 </html>
