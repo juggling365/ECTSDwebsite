@@ -775,7 +775,7 @@ nav a[aria-current="page"] {
 }
 
 .student-community-link {
-  display: inline-block;
+  display: block;
   margin-top: 1.5rem;
   color: #9b2c2c;
   font-weight: 700;
